@@ -97,10 +97,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
-@utility stroke-text {
-  color: transparent;
-  -webkit-text-stroke: 1.5px currentColor;
-}
+
 @utility grain {
   &::after {
     content: "";
@@ -150,3 +147,7 @@
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; transition-delay: 0ms !important; }
   html { scroll-behavior: auto; }
 }
+
+.hollow { color: transparent !important; -webkit-text-stroke: 1.5px var(--hollow, var(--silver)); }
+.hollow.text-uv { --hollow: var(--uv); }
+.hollow.text-paper\/40 { --hollow: color-mix(in oklab, var(--paper) 45%, transparent); }
