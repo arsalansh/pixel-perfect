@@ -21,8 +21,9 @@ export function ChromeOrb() {
       camera.position.z = 8;
 
       const geo = new THREE.IcosahedronGeometry(1.5, 64);
+      const uniforms = { uTime: { value: 0 }, uMouse: { value: new THREE.Vector2() } };
       const mat = new THREE.ShaderMaterial({
-        uniforms: { uTime: { value: 0 }, uMouse: { value: new THREE.Vector2() } },
+        uniforms,
         vertexShader: `
           uniform float uTime; uniform vec2 uMouse;
           varying vec3 vN; varying vec3 vV;
@@ -85,7 +86,7 @@ export function ChromeOrb() {
       window.addEventListener("pointermove", onMove);
 
       let visible = true;
-      const io = new IntersectionObserver(([e]) => (visible = e.isIntersecting));
+      const io = new IntersectionObserver(([e]) => (visible = !!e?.isIntersecting));
       io.observe(el);
 
       let raf = 0;
@@ -94,11 +95,11 @@ export function ChromeOrb() {
         raf = requestAnimationFrame(tick);
         if (!visible) return;
         const t = clock.getElapsedTime();
-        mat.uniforms.uTime.value = reduce ? 2 : t;
-        mat.uniforms.uMouse.value.lerp(target, 0.05);
+        uniforms.uTime.value = reduce ? 2 : t;
+        uniforms.uMouse.value.lerp(target, 0.05);
         mesh.rotation.y += reduce ? 0 : 0.0025;
-        mesh.rotation.x = mat.uniforms.uMouse.value.y * 0.6;
-        mesh.rotation.z = mat.uniforms.uMouse.value.x * 0.4;
+        mesh.rotation.x = uniforms.uMouse.value.y * 0.6;
+        mesh.rotation.z = uniforms.uMouse.value.x * 0.4;
         renderer.render(scene, camera);
       };
       tick();
