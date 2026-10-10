@@ -18,7 +18,7 @@ export function ChromeOrb() {
       el.appendChild(renderer.domElement);
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
-      camera.position.z = 6;
+      camera.position.z = 8;
 
       const geo = new THREE.IcosahedronGeometry(1.5, 64);
       const mat = new THREE.ShaderMaterial({

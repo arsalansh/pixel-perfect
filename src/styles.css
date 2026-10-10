@@ -97,7 +97,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
-@utility outline-text {
+@utility stroke-text {
   color: transparent;
   -webkit-text-stroke: 1.5px currentColor;
 }

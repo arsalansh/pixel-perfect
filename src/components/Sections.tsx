@@ -71,7 +71,7 @@ export function Hero() {
             lines={[
               "Turning",
               <>Business <span className="text-uv">problems</span></>,
-              <>into <span className="outline-text text-silver">growth</span></>,
+              <>into <span className="stroke-text text-silver">growth</span></>,
               <>strategies<span className="text-lime">.</span></>,
             ]}
           />
@@ -130,7 +130,7 @@ export function About() {
         <div className="flex flex-col justify-center lg:col-span-7 lg:pl-10">
           <p className="label mb-8 text-lime">01 — About</p>
           <h2 className="display text-[13vw] text-paper sm:text-[9vw] lg:text-[6.4vw]">
-            <Lines lines={["Strategy is", "easy to", <span className="text-uv">recommend.</span>, <span className="outline-text text-silver">Harder to</span>, <span className="outline-text text-silver">execute.</span>]} />
+            <Lines lines={["Strategy is", "easy to", <span className="text-uv">recommend.</span>, <span className="stroke-text text-silver">Harder to</span>, <span className="stroke-text text-silver">execute.</span>]} />
           </h2>
           <p className="rv mt-10 max-w-lg text-lg text-silver" style={{ "--d": "500ms" } as CSSProperties}>
             A decade between strategy rooms and delivery calendars. Building positioning, shaping brands, running campaigns and making plans work in reality.
@@ -197,10 +197,10 @@ export function Questions() {
 const SERVICES = [
   { t: "Go-to-market", d: "Find the right market and route to demand.", align: "justify-start", style: "text-paper" },
   { t: "Growth", d: "Identify friction and build a plan to remove it.", align: "justify-end", style: "text-uv" },
-  { t: "Commerce", d: "Improve conversion and customer value.", align: "justify-center", style: "outline-text text-silver" },
+  { t: "Commerce", d: "Improve conversion and customer value.", align: "justify-center", style: "stroke-text text-silver" },
   { t: "Marketing", d: "Connect channels to business outcomes.", align: "justify-start sm:pl-[12vw]", style: "text-paper italic" },
   { t: "Positioning", d: "Give customers a reason to choose you.", align: "justify-end", style: "text-lime" },
-  { t: "Digital", d: "Connect brand, content and performance.", align: "justify-start", style: "outline-text text-uv" },
+  { t: "Digital", d: "Connect brand, content and performance.", align: "justify-start", style: "stroke-text text-uv" },
 ];
 
 export function Services() {
@@ -285,7 +285,7 @@ export function Process() {
               <div key={s} className="flex items-baseline gap-4 py-2 sm:gap-8">
                 <span className={`label transition-colors ${on ? "text-lime" : "text-paper/40"}`}>{String(i + 1).padStart(2, "0")}</span>
                 <span
-                  className={`display text-[15vw] transition-all duration-700 sm:text-[12vw] lg:text-[10vw] ${on ? "text-obsidian" : "outline-text text-paper/40"} ${i === activeIdx ? "translate-x-4 sm:translate-x-10" : ""}`}
+                  className={`display text-[15vw] transition-all duration-700 sm:text-[12vw] lg:text-[10vw] ${on ? "text-obsidian" : "stroke-text text-paper/40"} ${i === activeIdx ? "translate-x-4 sm:translate-x-10" : ""}`}
                   style={{ transitionTimingFunction: "var(--ease-out)" }}
                 >
                   {s}
